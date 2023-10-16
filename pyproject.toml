@@ -1,0 +1,50 @@
+[tool.poetry]
+name = 'test_pyckage_github'
+version = "0.1.0"
+description = "jeroenjanssens"
+authors = ["Zhiwei Zhang <zhiwei2017@gamil.com>"]
+readme = "README.rst"
+license = "MIT"
+repository = "https://github.com/zhiwei2017/test-pyckage-github"
+documentation = ""
+keywords = []
+packages = [
+  {include = "test_pyckage_github"}
+]
+
+include = []
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+
+[tool.poetry.group.dev.dependencies]
+bandit = "~1.7"
+flake8 = "~6.1"
+mypy = "~1.6"
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+pytest = "~7.4"
+pytest-cov = "~4.1"
+pytest-runner = "~6.0"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "~7.1"
+sphinx_rtd_theme = "~1.3"
+
+[build-system]
+requires = ["poetry-core>=1.2.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = ["tests"]
+addopts = "--verbose --doctest-modules --cov-report term-missing --cov=./test_pyckage_github"
